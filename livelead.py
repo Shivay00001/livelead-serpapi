@@ -54,8 +54,15 @@ def serpapi_get(params, api_key, retries=2):
 
 def maps_search(query, location, api_key, limit=10):
     """Google Maps search via SerpApi. Returns list of local_results dicts."""
+    # SerpApi google_maps needs ll (@lat,lng,zoom) when using location param
+    # Default to Mumbai coordinates if location mentions Mumbai, else use generic
+    coords = "@19.0760,72.8777,14z"  # Mumbai
+    if "delhi" in location.lower():
+        coords = "@28.6139,77.2090,14z"
+    elif "birmingham" in location.lower():
+        coords = "@52.4862,-1.8904,14z"
     data = serpapi_get(
-        {"engine": "google_maps", "q": query, "location": location, "type": "search"},
+        {"engine": "google_maps", "q": f"{query} in {location}", "ll": coords, "type": "search"},
         api_key,
     )
     return (data.get("local_results") or [])[:limit]
