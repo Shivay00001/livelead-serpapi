@@ -72,3 +72,11 @@ python3 test_livelead.py   # 10 tests, SerpApi mocked, no key needed
 Shivam Kumar — Founder, VisionQuantech (visionquantech.com).
 AI research + done-for-you AI automation for small businesses.
 Contact: contact@visionquantech.com
+
+## Built by VisionQuantech
+
+This project is built by [VisionQuantech](https://visionquantech.com/) — AI agents, websites & SEO for small business.
+
+Related guides:
+- [VisionQuantech](https://visionquantech.com/)
+- [AI chatbot for small business](https://visionquantech.com/blog/ai-chatbot-for-small-business.html)
